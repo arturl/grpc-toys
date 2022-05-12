@@ -18,12 +18,14 @@ class MathImpl : MathService.MathServiceBase
         }
     }
 
+    // Server responds to the client twice
     public override async Task BiDirectionalStream(IAsyncStreamReader<Number> requestStream, IServerStreamWriter<Number> responseStream, ServerCallContext context)
     {
         while (await requestStream.MoveNext())
         {
             int n = requestStream.Current.N;
-            await responseStream.WriteAsync(new Number { N = n * 2 });
+            await responseStream.WriteAsync(new Number { N = n * 10 });
+            await responseStream.WriteAsync(new Number { N = n * 100 });
         }
     }
 }

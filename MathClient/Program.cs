@@ -53,9 +53,10 @@ namespace MathClient
             });
 
             Console.WriteLine("Starting to send messages");
-            for(int i=0; i<5; i++)
+            for(int i=100; i<105; i++)
             {
-                await bdStream.RequestStream.WriteAsync(new Number { N = 1000*i });
+                Console.WriteLine($"Sending {i} to server");
+                await bdStream.RequestStream.WriteAsync(new Number { N = i });
             }
 
             Console.WriteLine("Disconnecting");
