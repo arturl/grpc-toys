@@ -18,15 +18,25 @@ class MathImpl : MathService.MathServiceBase
         }
     }
 
-    // Server responds to the client twice
+    // Server sends data to the client via a bidirectional stream
     public override async Task BiDirectionalStream(IAsyncStreamReader<Number> requestStream, IServerStreamWriter<Number> responseStream, ServerCallContext context)
     {
+        // Simulate server-initiated message, not a resonse to a client message
+        var sendTask = Task.Run(async () =>
+        {
+            await Task.Delay(3000); // happens after a delay, to mimic a reaction to an external stimulus
+            Console.WriteLine($"Server sends an out of band message");
+            await responseStream.WriteAsync(new Number { N = 999 });
+        });
+
         while (await requestStream.MoveNext())
         {
             int n = requestStream.Current.N;
             await responseStream.WriteAsync(new Number { N = n * 10 });
             await responseStream.WriteAsync(new Number { N = n * 100 });
         }
+
+        await sendTask;
     }
 }
 
