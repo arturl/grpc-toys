@@ -15,29 +15,19 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "io.grpc.examples.helloworld";
-option java_outer_classname = "HelloWorldProto";
+option java_package = "io.grpc.examples.math";
+option java_outer_classname = "MathProto";
 option objc_class_prefix = "HLW";
 
-package helloworld;
+package math;
 
 // The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-  rpc AddNumbers (NumberTuple) returns (stream Number) {}
-  rpc AddNumbers2 (Number) returns (Number) {}
+service MathService {
+  rpc AddNumbers (NumberTuple) returns (Number) {}
+  rpc GenerateNumbers(Number) returns (stream Number){}
+  rpc BiDirectionalStream(stream Number) returns (stream Number) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
-}
 
 message NumberTuple {
   int32 n1 = 1;
