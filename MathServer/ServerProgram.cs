@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Grpc.Core;
 using Math;
+using Microsoft.Bot.Schema;
 
 class MathImpl : MathService.MathServiceBase
 {
@@ -40,12 +41,14 @@ class MathImpl : MathService.MathServiceBase
     }
 }
 
-class Program
+class ServerProgram
 {
     const int Port = 30051;
     static async Task Main(string[] args)
     {
         Console.WriteLine("Starting the server");
+
+        Activity? a = null;
 
         Server server = new Server
         {
