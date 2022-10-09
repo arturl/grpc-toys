@@ -1,0 +1,79 @@
+{
+  "type": "conversationUpdate",
+  "id": "31ba704c-6526-466e-baaf-6f4536fa3bbe",
+  "timestamp": "2022-09-16T23:39:16.4594109+00:00",
+  "localTimestamp": null,
+  "localTimezone": null,
+  "serviceUrl": "urn:botframework:websocket:telephony",
+  "channelId": "telephony",
+  "from": {
+    "id": "685433395",
+    "name": "+14254458766",
+    "aadObjectId": null,
+    "role": null,
+    "type": "PSTN",
+    "phoneNumber": "+14254458766"
+  },
+  "conversation": {
+    "isGroup": false,
+    "conversationType": null,
+    "id": "db85804f-99f4-4d82-a0a0-00b4aa0fbe97",
+    "name": null,
+    "aadObjectId": null,
+    "role": null,
+    "tenantId": null
+  },
+  "recipient": {
+    "id": "TelephonyBotIVR",
+    "name": "+18335842431",
+    "aadObjectId": null,
+    "role": null
+  },
+  "textFormat": null,
+  "attachmentLayout": null,
+  "membersAdded": [
+    {
+      "id": "685433395",
+      "name": "+14254458766",
+      "aadObjectId": null,
+      "role": null,
+      "type": "PSTN",
+      "phoneNumber": "+14254458766"
+    },
+    {
+      "id": "TelephonyBotIVR",
+      "name": "+18335842431",
+      "aadObjectId": null,
+      "role": null
+    }
+  ],
+  "membersRemoved": null,
+  "reactionsAdded": null,
+  "reactionsRemoved": null,
+  "topicName": null,
+  "historyDisclosed": null,
+  "locale": "en-us",
+  "text": null,
+  "speak": null,
+  "inputHint": null,
+  "summary": null,
+  "suggestedActions": null,
+  "attachments": null,
+  "entities": null,
+  "channelData": null,
+  "action": null,
+  "replyToId": null,
+  "label": null,
+  "valueType": null,
+  "value": null,
+  "name": null,
+  "relatesTo": null,
+  "code": null,
+  "expiration": null,
+  "importance": null,
+  "deliveryMode": null,
+  "listenFor": null,
+  "textHighlights": null,
+  "semanticAction": null,
+  "callerId": null
+}
